@@ -1,0 +1,26 @@
+name: Deploy static content via FTP
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ws3.angoweb.net
+          username: ${{ secrets.USER_APP }}
+          password: ${{ secrets.PASS_APP }}
+          protocol: ftp
+          port: 21
+          local-dir: ./ #
+          server-dir: ./public_html/
