@@ -32,6 +32,27 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(15px) brightness(1.1);
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .custom-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            max-height: 400px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 
 <body>
@@ -189,7 +210,7 @@
         <div class="container">
             <div class="row g-5 align-items-end">
                 <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid rounded" data-wow-delay="0.1s" src="img/about.jpg">
+                    <img class="img-fluid rounded custom-img" data-wow-delay="0.1s" src="img/about.jpg">
                 </div>
                 <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
                     <h1 class="display-5 mb-4">Quem Somos?</h1>
@@ -202,7 +223,7 @@
                         Nosso compromisso é oferecer serviços eficientes, sustentáveis e personalizados, sempre
                         adaptados às necessidades dos nossos clientes.
                     </p>
-                    <a class="btn btn-primary py-3 px-4" href="">Explore More</a>
+
                     <p class="mb-4 text-white">
                         Nosso compromisso é oferecer serviços eficientes, sustentáveis e personalizados, sempre
                         adaptados às necessidades dos nossos clientes.
@@ -218,6 +239,38 @@
 
                 </div>
 
+            </div>
+
+            <!-- metodologia com cards e texto a esuqerda e imagem a direita -->
+            <br><br>
+            <div class="row align-items-center mt-5">
+                <!-- Coluna da esquerda: Texto -->
+                <div class="col-md-6">
+                    <h2 class="mb-4">Nossa Metodologia</h2>
+                    <p>
+                        Atuamos com um modelo de trabalho pautado na eficiência e transparência, garantindo um alto
+                        padrão de qualidade. Nossa metodologia inclui:
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">✅ <strong>Equipe Qualificada:</strong> Profissionais treinados e
+                            capacitados para garantir excelência nos serviços.</li>
+                        <li class="list-group-item">✅ <strong>Tecnologia e Equipamentos:</strong> Utilização de
+                            materiais e equipamentos modernos para maior eficiência.</li>
+                        <li class="list-group-item">✅ <strong>Sustentabilidade:</strong> Aplicação de práticas
+                            ecológicas e uso de produtos certificados ambientalmente.</li>
+                        <li class="list-group-item">✅ <strong>Monitoramento:</strong> Supervisão constante e avaliação
+                            de desempenho para ajustes e melhorias.</li>
+                    </ul>
+                </div>
+
+                <!-- Coluna da direita: Imagem com formas -->
+                <div class="col-md-6 text-center">
+                    <div style="width: 100%; height: auto;">
+                        <img src="https://redacao.rhpravoce.com.br/wp-content/uploads/2021/08/Equipe-diversa-e-integrada-para-o-sucesso.2.png"
+                            alt="Formas Geométricas" class="img-fluid rounded-4 shadow-lg"
+                            style="clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -348,7 +401,7 @@
                             <p class="mb-4 small text-muted text-center">
                                 Faxina geral; pós-obra; limpeza de vidros; higienização de estofados; passadoria.
                             </p>
-                            <a class="btn btn-sm mt-auto align-self-center" href="#">
+                            <a class="btn btn-sm mt-auto align-self-center" href="#sobre">
                                 <i class="fa fa-plus text-primary me-2"></i>Saiba Mais
                             </a>
                         </div>
@@ -371,7 +424,7 @@
                             <p class="mb-4 small text-muted text-center">
                                 Escritórios; bancos; restaurantes; shoppings; condomínios.
                             </p>
-                            <a class="btn btn-sm mt-auto align-self-center" href="#">
+                            <a class="btn btn-sm mt-auto align-self-center" href="#sobre">
                                 <i class="fa fa-plus text-primary me-2"></i>Saiba Mais
                             </a>
                         </div>
@@ -394,7 +447,7 @@
                             <p class="mb-4 small text-muted text-center">
                                 Áreas críticas; salas cirúrgicas; UTIs; biossegurança; resíduos biológicos.
                             </p>
-                            <a class="btn btn-sm mt-auto align-self-center" href="#">
+                            <a class="btn btn-sm mt-auto align-self-center" href="#sobre">
                                 <i class="fa fa-plus text-primary me-2"></i>Saiba Mais
                             </a>
                         </div>
@@ -417,7 +470,7 @@
                             <p class="mb-4 small text-muted text-center">
                                 Coleta; transporte; recicláveis; hospitalares; caçambas.
                             </p>
-                            <a class="btn btn-sm mt-auto align-self-center" href="#">
+                            <a class="btn btn-sm mt-auto align-self-center" href="#sobre">
                                 <i class="fa fa-plus text-primary me-2"></i>Saiba Mais
                             </a>
                         </div>
@@ -440,7 +493,7 @@
                             <p class="mb-4 small text-muted text-center">
                                 Fossas; impermeabilização; pragas; fachadas; garagens.
                             </p>
-                            <a class="btn btn-sm mt-auto align-self-center" href="#">
+                            <a class="btn btn-sm mt-auto align-self-center" href="#sobre">
                                 <i class="fa fa-plus text-primary me-2"></i>Saiba Mais
                             </a>
                         </div>
@@ -463,7 +516,7 @@
                             <p class="mb-4 small text-muted text-center">
                                 Monitoramento; avaliação; ajustes; garantia de satisfação.
                             </p>
-                            <a class="btn btn-sm mt-auto align-self-center" href="#">
+                            <a class="btn btn-sm mt-auto align-self-center" href="#sobre">
                                 <i class="fa fa-plus text-primary me-2"></i>Saiba Mais
                             </a>
                         </div>
