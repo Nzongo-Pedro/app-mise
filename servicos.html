@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Serviços - EufraMise</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+        .service-detail-header {
+            background: linear-gradient(135deg, rgba(65, 218, 65, 0.9), rgba(132, 231, 93, 0.9));
+            color: white;
+            padding: 60px 0;
+        }
+
+        .service-detail-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .service-list-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #15bb6e;
+            transition: all 0.3s ease;
+        }
+
+        .service-list-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-navigation {
+            background: #f8f9fa;
+            padding: 20px 0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .service-nav-button {
+            margin: 5px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .service-nav-button.active {
+            background-color: #15bb6e;
+            border-color: #15bb6e;
+        }
+
+        .service-nav-button:hover {
+            background-color: #15bb6e;
+            border-color: #15bb6e;
+            transform: translateY(-2px);
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, rgba(21, 187, 110, 0.1), rgba(65, 218, 65, 0.1));
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/logo.png" alt="Eufra Mise Logo" class="img-fluid" style="width: 200px; height: 50px" />
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html#home" class="nav-item nav-link">Home</a>
+                <a href="index.html#sobre" class="nav-item nav-link">Sobre</a>
+                <a href="index.html#metodologia" class="nav-item nav-link">Metodologia</a>
+                <a href="index.html#servico" class="nav-item nav-link">Serviços</a>
+                <a href="index.html#contacto" class="nav-item nav-link">Contactos</a>
+            </div>
+            <a href="index.html#contacto" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Solicitar<i
+                    class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Service Detail Header -->
+    <div class="service-detail-header">
+        <div class="container text-center">
+            <div id="service-icon" class="service-detail-icon">
+                <i class="fa fa-home"></i>
+            </div>
+            <h1 id="service-title" class="display-4 mb-3">Limpeza Residencial</h1>
+            <p id="service-subtitle" class="lead">Serviços personalizados para casas, condomínios, apartamentos e
+                quintais</p>
+        </div>
+    </div>
+
+    <!-- Service Navigation -->
+    <div class="container mt-4">
+        <div class="service-navigation text-center">
+            <h5 class="mb-3">Nossos Serviços:</h5>
+            <button class="btn btn-outline-primary service-nav-button active" onclick="showService('residencial')">
+                🏠 Limpeza Residencial
+            </button>
+            <button class="btn btn-outline-primary service-nav-button" onclick="showService('comercial')">
+                🏢 Limpeza Comercial
+            </button>
+            <button class="btn btn-outline-primary service-nav-button" onclick="showService('hospitalar')">
+                🏥 Limpeza Hospitalar
+            </button>
+            <button class="btn btn-outline-primary service-nav-button" onclick="showService('residuos')">
+                ♻️ Gestão de Resíduos
+            </button>
+            <button class="btn btn-outline-primary service-nav-button" onclick="showService('especializados')">
+                🌿 Serviços Especializados
+            </button>
+            <button class="btn btn-outline-primary service-nav-button" onclick="showService('suporte')">
+                📞 Suporte Contínuo
+            </button>
+        </div>
+    </div>
+
+    <!-- Service Content -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="service-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="bg-light rounded p-4 mb-4">
+                    <h5>Precisa de Ajuda?</h5>
+                    <p class="mb-3">Entre em contacto connosco para mais informações sobre nossos serviços.</p>
+                    <div class="mb-2">
+                        <i class="fa fa-phone text-primary me-2"></i>
+                        <span>+244 923 002 151</span>
+                    </div>
+                    <div class="mb-2">
+                        <i class="fa fa-phone text-primary me-2"></i>
+                        <span>+244 956 002 151</span>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fa fa-envelope text-primary me-2"></i>
+                        <span>comercial@mise.ao</span>
+                    </div>
+                    <a href="index.html#contacto" class="btn btn-primary w-100">Solicitar Orçamento</a>
+                </div>
+
+                <div class="bg-light rounded p-4">
+                    <h5>Horário de Atendimento</h5>
+                    <div class="mb-2">
+                        <strong>Segunda - Sexta:</strong> 08:00 - 18:00
+                    </div>
+                    <div class="mb-2">
+                        <strong>Sábado:</strong> 08:00 - 12:00
+                    </div>
+                    <div>
+                        <strong>Domingo:</strong> Emergências
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="contact-cta">
+            <h3>Pronto para começar?</h3>
+            <p class="mb-3">Entre em contacto connosco hoje mesmo e descubra como podemos ajudar!</p>
+            <a href="index.html#contacto" class="btn btn-primary btn-lg">Falar Connosco</a>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">EufraMise</a>, Todos os direitos reservados.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Desenvolvido pela <a class="border-bottom" href="https://Komesso.com" target="_blank">Komesso</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Service Detail Script -->
+    <script>
+        const services = {
+            residencial: {
+                icon: 'fa-home',
+                title: 'Limpeza Residencial',
+                subtitle: 'Serviços personalizados para casas, condomínios, apartamentos e quintais, com foco no conforto e bem-estar dos moradores.',
+                description: 'Oferecemos soluções completas de limpeza para ambientes residenciais, garantindo um ambiente limpo, saudável e acolhedor para você e sua família.',
+                items: [
+                    'Limpeza geral e pós-obra',
+                    'Lavagem de fachadas e vidros',
+                    'Limpeza de caixas de gordura e fossas',
+                    'Coleta e separação de resíduos domésticos',
+                    'Higienização de áreas comuns em condomínios'
+                ],
+                image: 'https://img.freepik.com/fotos-gratis/sorrindo-segurando-e-aponta-para-o-balde-de-ferramentas-de-limpeza-jovem-limpador-afro-americano-de-uniforme-com-luvas-isoladas-em-fundo-verde_141793-135154.jpg'
+            },
+            comercial: {
+                icon: 'fa-building',
+                title: 'Limpeza Comercial e Institucional',
+                subtitle: 'Soluções para empresas, escritórios, escolas, igrejas, repartições públicas e outras instituições.',
+                description: 'Mantemos seus espaços comerciais sempre impecáveis, criando um ambiente profissional que transmite confiança e bem-estar para funcionários e clientes.',
+                items: [
+                    'Limpeza diária ou periódica de ambientes internos',
+                    'Reposição de materiais de higiene',
+                    'Gestão de resíduos administrativos',
+                    'Manutenção de pátios e parques de estacionamento',
+                    'Suporte em eventos institucionais'
+                ],
+                image: 'https://img.freepik.com/fotos-gratis/homens-de-tiro-completo-limpando-o-escritorio_23-2149345551.jpg'
+            },
+            hospitalar: {
+                icon: 'fa-hospital',
+                title: 'Limpeza Hospitalar',
+                subtitle: 'Serviço técnico com foco em biossegurança e prevenção de contaminações.',
+                description: 'Seguimos rigorosos protocolos de biossegurança para garantir a higienização adequada de ambientes de saúde, contribuindo para a prevenção de infecções e a segurança de pacientes e profissionais.',
+                items: [
+                    'Limpeza e desinfeção de salas de espera, consultórios e enfermarias',
+                    'Recolha e triagem de resíduos hospitalares',
+                    'Uso de produtos hospitalares certificados',
+                    'Formação específica para operadores de saúde',
+                    'Apoio à logística interna de resíduos'
+                ],
+                image: 'https://www.guimaconseco.com.br/wp-content/uploads/2024/04/legislacao-e-normas-para-limpeza-hospitalar-scaled.jpg'
+            },
+            residuos: {
+                icon: 'fa-recycle',
+                title: 'Gestão de Resíduos Orgânicos e Urbanos',
+                subtitle: 'Gestão integrada e sustentável de resíduos, com soluções para espaços públicos, condomínios, mercados, empresas e indústrias.',
+                description: 'Promovemos a gestão responsável de resíduos, contribuindo para um ambiente mais limpo e sustentável através de soluções eficientes de coleta, transporte e destinação final adequada.',
+                items: [
+                    'Coleta seletiva e indiferenciada',
+                    'Transporte e triagem de resíduos',
+                    'Destino final licenciado (aterros ou reciclagem)',
+                    'Acompanhamento técnico e educação ambiental',
+                    'Apoio à certificação ambiental de empresas'
+                ],
+                image: 'https://elementusconsultoria.com/wp-content/uploads/2024/02/Saiba-mais-sobre-o-Plano-de-Gestao-Integrada-de-Residuos-Solidos.jpg'
+            },
+            especializados: {
+                icon: 'fa-cogs',
+                title: 'Serviços Especializados',
+                subtitle: 'Oferecemos serviços complementares que promovem higiene, sustentabilidade e bem-estar coletivo.',
+                description: 'Soluções especializadas para necessidades específicas, sempre com foco na qualidade, segurança e sustentabilidade ambiental.',
+                items: [
+                    'Saneamento básico: Limpeza de fossas, sumidouros e drenagens',
+                    'Jardinagem: Corte de relva, poda de árvores e paisagismo',
+                    'Desinfestação: Controlo de pragas (ratos, baratas, mosquitos, etc.)',
+                    'Nebulização e sanitização de ambientes públicos e privados',
+                    'Apoio a campanhas de saúde pública e prevenção ambiental'
+                ],
+                image: 'https://keeperservicos.com.br/wp-content/uploads/2024/08/limpeza-piscina.webp'
+            },
+            suporte: {
+                icon: 'fa-headset',
+                title: 'Suporte Contínuo',
+                subtitle: 'Monitoramento e acompanhamento constante para garantir a excelência dos nossos serviços.',
+                description: 'Oferecemos suporte contínuo para garantir que todos os nossos serviços mantenham o mais alto padrão de qualidade, com monitoramento regular e ajustes quando necessário.',
+                items: [
+                    'Monitoramento contínuo da qualidade dos serviços',
+                    'Avaliação periódica de desempenho',
+                    'Ajustes operacionais conforme necessidade',
+                    'Garantia de satisfação do cliente',
+                    'Relatórios detalhados de atividades'
+                ],
+                image: 'https://www.quattrus.com/wp-content/uploads/2023/08/MONITORAMENTO-CONTINUO-NA-GESTAO-EMPRESARIAL.png'
+            }
+        };
+
+        function showService(serviceKey) {
+            const service = services[serviceKey];
+            if (!service) return;
+
+            // Update header
+            document.getElementById('service-icon').innerHTML = `<i class="fa ${service.icon}"></i>`;
+            document.getElementById('service-title').textContent = service.title;
+            document.getElementById('service-subtitle').textContent = service.subtitle;
+
+            // Update navigation buttons
+            document.querySelectorAll('.service-nav-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content
+            const contentHtml = `
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <img src="${service.image}" alt="${service.title}" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>Sobre este serviço</h3>
+            <p>${service.description}</p>
+            <div class="mt-3">
+              <a href="index.html#contacto" class="btn btn-primary me-2">Solicitar Orçamento</a>
+              <a href="tel:+244923002151" class="btn btn-outline-primary">Ligar Agora</a>
+            </div>
+          </div>
+        </div>
+        
+        <h4 class="mb-4">O que inclui:</h4>
+        <div class="row">
+          ${service.items.map(item => `
+            <div class="col-md-6 mb-3">
+              <div class="service-list-item">
+                <i class="fa fa-check text-primary me-2"></i>
+                ${item}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        
+        <div class="alert alert-info mt-4">
+          <h5><i class="fa fa-info-circle me-2"></i>Informações Importantes</h5>
+          <ul class="mb-0">
+            <li>Todos os nossos serviços seguem rigorosos padrões de qualidade</li>
+            <li>Equipas qualificadas e produtos certificados</li>
+            <li>Flexibilidade de horários e frequência</li>
+            <li>Orçamento personalizado sem compromisso</li>
+          </ul>
+        </div>
+      `;
+
+            document.getElementById('service-content').innerHTML = contentHtml;
+
+            // Smooth scroll to content
+            document.getElementById('service-content').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service') || 'residencial';
+            showService(service);
+
+            // Hide spinner
+            setTimeout(() => {
+                document.getElementById('spinner').classList.remove('show');
+            }, 500);
+        });
+
+        // Handle navigation clicks without event parameter
+        document.querySelectorAll('.service-nav-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const serviceKey = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+                showService(serviceKey);
+
+                // Update URL
+                const url = new URL(window.location);
+                url.searchParams.set('service', serviceKey);
+                window.history.replaceState({}, '', url);
+            });
+        });
+    </script>
+</body>
+
+</html>
