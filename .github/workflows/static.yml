@@ -17,10 +17,10 @@ jobs:
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ws3.angoweb.net
+          server: ${{ secrets.HOST_APP }}
           username: ${{ secrets.USER_APP }}
           password: ${{ secrets.PASS_APP }}
           protocol: ftp
           port: 21
-          local-dir: ./ #
-          server-dir: ./public_html/
+          local-dir: ./
+          server-dir: ./
